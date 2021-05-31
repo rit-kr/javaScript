@@ -101,7 +101,10 @@ console.log(sendMessage("Hello Prompt!", prompt));
  Create a function named `first` that accepts an argument a function (callback) and return the same function defination.
 */
 let first = function(cb) {
-  return cb;
+  function cb () {
+
+  }
+  return cb();
 }
 /*
  Create a function named `second`
@@ -219,7 +222,7 @@ const people = [
 
   */
       function isGradeB(obj){
-        return obj.grade > 8;
+        return obj.grade > 8 && obj.grade <=12;
       }
       console.log(isGradeB(grades[0])); // true
       console.log(isGradeB(grades[1])); // true
