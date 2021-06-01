@@ -234,25 +234,30 @@
 
 ### 1. Parameter: 
 
-### 2. Return: 
+### 2. Return: return array split with space in world
 
 ### 3. Example:
 ```
-    let learn = "learning web development is not easy";
+let learn = "learning web development is not easy";
+    learn.split("");
+(36) ["l", "e", "a", "r", "n", "i", "n", "g", " ", "w", "e", "b", " ", "d", "e", "v", "e", "l", "o", "p", "m", "e", "n", "t", " ", "i", "s", " ", "n", "o", "t", " ", "e", "a", "s", "y"]
+
     
 ```
 ### 4.
 
 ## **18.substring**
 
-### 1. Parameter: 
+### 1. Parameter: biginIndex, or and endindex  (number data type)
 
-### 2. Return: 
+### 2. Return: Character from biginindex to endindex
 
 ### 3. Example:
 ```
     let learn = "learning web development is not easy";
+    learn.slice(2, 20)  // "arning web develop"
+    learn.slice(10)   //  "eb development is not easy"
     
 ```
-### 4.
+### 4.its same like slice but can return according to reverse input.like we can input (20,2) inplace of(2,20)
 
