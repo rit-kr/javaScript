@@ -107,32 +107,41 @@ function isodd(element) {
     return element % 2 !== 0;
 }
 let oddNumbers = numberThree.filter(isodd)
+// let oddNumbers = numberThree.filter((element) => element % 2 !== 0);
+
 // Create a new variable named evenNumbers that store all the even numbers in numbersThree array
 function isEven(element) {
     return element % 2 === 0;
 }
 let evenNumbers = numberThree.filter(isEven)
 
+// let evenNumbers = numberThree.filter((element) => element % 2 === 0);
+
 // Find the index of 10 in numbersThree array
-newNumberThree.indexOf(10)
+numberThree.find((num) => num === 10);
 
 // Reverse the values of numbersThree array
-newNumberThree.reverse()
+numberThree.reverse()
 
 // Reverse the values of numbersTwo array
 numbersTwo.reverse();
 
 // Join all fruits with '-', convert to uppercase and log it
-function reducer(a, b) {
-    let result = a + "-" + b;
-    return result.toUpperCase()
-}
-console.log(fruits.reduce(reducer))
 
+// function reducer(a, b) {
+//     let result = a + "-" + b;
+//     return result.toUpperCase()
+// }
+// console.log(fruits.reduce(reducer))
+
+console.log(fruits.join("-").toUpperCase());
 
 // Join all fruits with '&', convert to lowercase and log it
-function lowerreducer(a, b) {
-    let result = a + "&" + b;
-    return result.toLowerCase()
-}
-console.log(fruits.reduce(lowerreducer))
+
+// function lowerreducer(a, b) {
+//     let result = a + "&" + b;
+//     return result.toLowerCase()
+// }
+// console.log(fruits.reduce(lowerreducer))
+
+console.log(fruits.join("&").toLowerCase());
