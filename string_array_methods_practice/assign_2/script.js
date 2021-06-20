@@ -69,7 +69,7 @@ let odd = numbers.filter((num) => num % 2 !== 0);
 strings.unshift("Hello")
 
 // - Make a subset of numbers array [18,9,7,11]
-console.log(numbers.slice(3, 6));
+// console.log(numbers.slice(3, 6));
 
 // - Make a subset of strings array ['a','collection']
 // strings.splice(2, 2)
@@ -78,16 +78,35 @@ console.log(numbers.slice(3, 6));
 // numbers.splice(1, "1221");
 // numbers.splice(3, "1881")
 
+console.log(
+  numbers.map((num) => {
+    if(num === 12) {
+      return 1221;
+    } else if (num === 18) {
+      return 1881;
+    } else{
+      return num;
+    }
+  }
+));
+
 // - Replace words in strings array with the length of the word
 // function compareStringFn(a,b){
 //   return a.lenght - b.length;
 // }
 // numbers.sort(compareStringFn);
+ let stringLength  = strings.map((string) => string.length);
 
 // - Find the sum of the length of words using above question
 // numbers.reduce(acc, num) => {
 //   return acc + num;
 // },0);
+
+stringLength.reduce((acc,cv) => {
+  acc = acc + cv;
+  return acc;
+}, 0);
+
 // - Customers Array
 var customers = [
   { firstname: 'Joe', lastname: 'Blogs' },
@@ -96,21 +115,34 @@ var customers = [
   { firstname: 'Jack', lastname: 'White' },
 ];
 // - Find all customers whose firstname starts with 'J'
-// result = customers.filter((item) => item.firstname.startsWith("J"));
 
-// console.log(result)
+result = customers.filter((item) => item.firstname.startsWith("J"));
+
+console.log(result)
 
 // - Create new array with only first name
-// let firstName = customers.map((item) => item.firstname) 
+let firstName = customers.map((item) => item.firstname);
 
 // - Create new array with all the full names (ex: "Joe Blogs")
 
-// let fullName = customers.map((item) => `${item.firstname} ${item.lastname}`);
+let fullName = customers.map((item) => `${item.firstname} ${item.lastname}`);
 
 // - Sort the array created above alphabetically
 
-// alphabaticalArray = customers.sort((item) => item.firstname)
+let alphabaticalArray = [...fullName].sort();
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
 
-// let vowelName = customers.filter((item) => item.firstname.includes("a" || "e" || "i" || "o" || "u" || "A" || "E" || "I" || "O" || "U"))
+let vowelName = customers.filter((item) => {
+  if (
+    item.firstname.toLowerCase().includes("a") ||
+    item.firstname.toLowerCase().includes("e") ||
+    item.firstname.toLowerCase().includes("i") ||
+    item.firstname.toLowerCase().includes("o") ||
+    item.firstname.toLowerCase().includes("u")
+   ) {
+    return true;
+  } else{
+    return false
+  }
+});
