@@ -32,6 +32,7 @@ let allIS = strings.filter((string) => string.includes("is"));
 
 // - Find all the words that contain 'is' use string method 'indexOf'
 let allISIndex = strings.filter((string) => string.includes("is") !== -1);
+
 // - Check if all the numbers in numbers array are divisible by three use array method (every)
 
 // function dividedBYThree(num) {
@@ -58,6 +59,7 @@ let largest = [...numbers].sort((a,b) => a - b).pop();
 
 // - Find longest string in strings
 let longest = [...strings].sort((a,b) => a.length - b.length).pop();
+
 // - Find all the even numbers
 let even = numbers.filter((num) => num % 2 === 0);
 
