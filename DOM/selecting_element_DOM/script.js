@@ -4,13 +4,12 @@
 // 2. Select the element using the children property:
 
 //    - Select the `h1` element and change the value to `Learning DOM`
-    let h1 = document.body.children[0];
-    h1.innerText = "learning DOM";
+    document.body.children[0].innerText = "learning DOM";
 
 //    - Select the first `li` element inside the `ul` with class `topics` and change the innerText to `all about document`
     let firstLiInUl = document.body.children[5].children[0];
     firstLiInUl.innerText = "all about document";
-    
+
 //    - Select the input element with name `email`
     let NameEmail = document.body.children[6].children[2].children[1];
 
