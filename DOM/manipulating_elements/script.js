@@ -6,8 +6,10 @@ default value to be "text" and return the input element inside label. (create it
 function createInputElm(label, type = "text") {
   let createdLabel = document.createElement(`label`);
   createdLabel.innerText = label;
+
   let createInput = document.createElement(`input`);
   createInput.type = type;
+   
   createdLabel.append(createInput);
   return createdLabel;
 }
@@ -21,8 +23,8 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 
 // Your code goes here
 function createInputElm(label, type = "text") {
-  let createdLabel = `<label>${label}: <input type="${type}"></label>`;
-  return createdLabel;
+  let html = `<label>${label}: <input type="${type}"></label>`;
+  return html;
 };
 
 // TEST
@@ -61,25 +63,42 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 */
 
 // Your code goes here
-function createTodoList(arr){
-  let ul = document.createElement(`ul`);
-  arr.forEach(elm => {
-    let li = document.createElement(`li`)
-    let p = document.createElement(`p`);
-    p.innerText = elm.name;
-    let input = document.createElement(`input`);
-    input.type = "checkbox";
-    input.name = " ";
-    input.id = " ";
-    if (elm.isDone === true) {
-      input.setAttribute('checked', true);
-    }
-    let span = document.createElement("span");
-    span.innerText = "X";
-    li.append(p, input, span);
-    ul.append(li);
-  });
-  return ul;
+// function createTodoList(arr){
+//   let ul = document.createElement(`ul`);
+//   arr.forEach(elm => {
+//     let li = document.createElement(`li`)
+//     let p = document.createElement(`p`);
+//     p.innerText = elm.name;
+//     let input = document.createElement(`input`);
+//     input.type = "checkbox";
+//     input.name = " ";
+//     input.id = " ";
+//     if (elm.isDone === true) {
+//       input.setAttribute('checked', true);
+//     }
+//     let span = document.createElement("span");
+//     span.innerText = "X";
+//     li.append(p, input, span);
+//     ul.append(li);
+//   });
+//   return ul;
+// }
+
+
+function createTodoList(data =[]) {
+  let html = `<ul>
+    ${data
+      .map(
+      (todo) => `
+    <li>
+      <p>${todo.name}</p>
+      <input type="checkbox" ${todo.isDone ? "checked" : ""} name="" id="">
+      <span>X</span>
+    </li>`
+      )
+      .join("")}
+    </ul>`;
+    return html;
 }
 
 // TEST
