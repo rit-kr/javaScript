@@ -29,7 +29,11 @@ function handleSubmit(event) {
     resultColor.innerText = `Color: ${userInfo.color}`;
     resultRating.innerText = `Rating: ${userInfo.rating}`;
     resultGenre.innerText = `Book Genre: ${userInfo.drone}`;
-    resultAgree.innerText = `You agree to Terms and Conditions`;
+
+    resultAgree.innerText = `${userInfo.terms.checked === "true"
+        ? "You agree to Terms and Conditions" 
+        : "You don't agree to Terms and Conditions"
+    }`;
     
 }
 
